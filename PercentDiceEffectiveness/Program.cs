@@ -77,24 +77,16 @@
             Console.WriteLine("percent: " + percent);
 
             //gets the effect from percentage
-            float effect = 0; //holds effect to be returned
-            for (int i = 0; i < percentages.Length; i++) //runs through all percentage options
+            for (int i = 0; i < percentages.Length; i++)
             {
-                if (i == 0) //checks first index. seperate to prevent index out of bounds later, if percentages dont match
+                if (percent <= percentages[i])
                 {
-                    if (percent <= percentages[i]) //does percent match first option's chance?
-                    {
-                        effect = effects[categoryName][i]; //get correlating effect
-                        break;
-                    }
-                }
-                else if (percent > percentages[i - 1] && percent <= percentages[i]) //does percent match given one from list?
-                {
-                    effect = effects[categoryName][i]; //get correlating effect
-                    break;
+                    Console.WriteLine($"percent: {percent}, percent[{i}]: {percentages[i]}");
+                    return effects[categoryName][i];
                 }
             }
-            return effect;
+
+            return 0;
         }
     }
 }
