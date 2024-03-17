@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class BaseClass : MonoBehaviour
 {
-    public float health;
+    /*
+     * Baseclass da nogle af tingene er ens for klasserne
+     */
 
+    public string className;
+    public float health;
+    public float[] damage;
+    public float[] coords;
+
+    public GameObject gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +26,18 @@ public class BaseClass : MonoBehaviour
         
     }
 
-    void Move()
+    //kode der flytter entity
+    public void Move()
     {
-        
+
+    }
+
+    //erstat temp med rigtige senere?
+    public void BaseSpawn(float tempHealth, float[] tempDamage, float[] tempCoords)
+    {
+        health = tempHealth;
+        damage = tempDamage;
+        coords = tempCoords;
+
     }
 }
