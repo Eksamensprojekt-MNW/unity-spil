@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript2 : BaseClass
+public class DPSClass : BaseClass
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,11 @@ public class NewBehaviourScript2 : BaseClass
     void Update()
     {
         
+    }
+
+    void Spawn(float tempHealth, float[] tempDamage, float[] tempCoords)
+    {
+
+        BaseSpawn(tempHealth, tempDamage, tempCoords);
     }
 }
